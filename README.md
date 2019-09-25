@@ -9,11 +9,8 @@ Final Project for Data Visualization
 # Project Structure:
 
 
-|-root
-|
-|----R       > For all R scripts
-|
-|----data    > Data files
+|-root  |  |----R       > For all R scripts  |  |----data    > Data files
+
 |
 
 |----doc     > Project related documents
