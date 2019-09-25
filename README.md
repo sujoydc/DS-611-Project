@@ -10,6 +10,7 @@ Final Project for Data Visualization
 
 
 |-root
+|
 |----R       > For all R scripts
 |
 |----data    > Data files
@@ -25,6 +26,7 @@ Final Project for Data Visualization
 |-.gitignore > To ignore local git files
 |
 |-analysis.R > Main file 
+
 
 
 to be continued ...
