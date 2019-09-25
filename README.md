@@ -10,9 +10,17 @@ Final Project for Data Visualization
 
 
 |-root
+
+
 |
+
+
 |----R       > For all R scripts
+
+
 |
+
+
 |----data    > Data files
 |
 |----doc     > Project related documents
