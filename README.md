@@ -1,12 +1,12 @@
 # DS-611-Project
 Final Project for Data Visualization
 
-#Team Members:
+# Team Members:
 * @Christina
 * @Lawrence
 * @Sujoy
 
-#Project Structure:
+# Project Structure:
 
 
 |-root
