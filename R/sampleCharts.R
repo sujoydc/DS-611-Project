@@ -31,3 +31,21 @@ medalHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) +
        fill = "# Medals",
        caption = "Olympics Data Visualization")
 
+## Create an age group category 
+
+sports21stMedalDF$AgeGroup <- ifelse(sports21stMedalDF$Age <=18, "High School",
+                              ifelse(sports21stMedalDF$Age > 18 & sports21stMedalDF$Age <= 22, "Under Grad", "Adult"))
+
+sports21stMedalDF
+
+ageHist <- ggplot(sports21stMedalDF, aes(AgeGroup))
+ageHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title = "Histogram on Age Group", 
+       y = "Count",
+       fill = "# Medals",
+       caption = "Olympics Data Visualization")
+
+# Location with number of participants 
+
+
