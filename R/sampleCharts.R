@@ -11,18 +11,22 @@ olm <- read.csv('./data/athlete_events_clean.csv', header=T)
 # Convert to a data frame 
 sportsDF <- as.data.frame(olm)
 
+# Our analysis is only for 21st Century
 sports21stDF <- subset(sportsDF, Year >= 2000)
 
+# Medal (including non winners) count for Male/Female  
 firstHist <- ggplot(sports21stDF, aes(Sex))
 firstHist +  geom_bar(aes(fill = sports21stDF$Medal), width = 0.5) + 
   theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
-  labs(title = "Histogram on Male/Female", 
+  labs(title = "Male/Female Distribution", 
        y = "Count",
        fill = "# Medals",
        caption = "Olympics Data Visualization")
 
+# Subset of only medal winners
 sports21stMedalDF <- subset(sports21stDF, Medal != 'NA')
 
+# Medal count for Male/Female  
 medalHist <- ggplot(sports21stMedalDF, aes(Sex))
 medalHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) + 
   theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
@@ -31,13 +35,11 @@ medalHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) +
        fill = "# Medals",
        caption = "Olympics Data Visualization")
 
-## Create an age group category 
-
+# Create an age group category 
 sports21stMedalDF$AgeGroup <- ifelse(sports21stMedalDF$Age <=18, "High School",
                               ifelse(sports21stMedalDF$Age > 18 & sports21stMedalDF$Age <= 22, "Under Grad", "Adult"))
 
-sports21stMedalDF
-
+# Medal count on Age group
 ageHist <- ggplot(sports21stMedalDF, aes(AgeGroup))
 ageHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) + 
   theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
@@ -46,6 +48,8 @@ ageHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) +
        fill = "# Medals",
        caption = "Olympics Data Visualization")
 
-# Location with number of participants 
+
+# Location with number of participant
+
 
 
