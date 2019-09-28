@@ -1,3 +1,4 @@
+#install.packages("countrycode")
 # Move these to different file and include here
 library(ggplot2)
 library(ggalt) # For outline 
@@ -5,6 +6,7 @@ library(ggalt) # For outline
 options(scipen=999)  # turn-off scientific notation like 1e+48
 theme_set(theme_classic())
 
+setwd("/Users/gogol/Documents/Utica/DSC-611-Z1/Module8/DS-611-Project")
 
 # Load the dataset
 olm <- read.csv('./data/athlete_events_clean.csv', header=T)
@@ -50,6 +52,10 @@ ageHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) +
 
 
 # Location with number of participant
+library(countrycode)
 
+sportsDF$continent <- countrycode(sourcevar = sportsDF[, "Team"],
+                            origin = "country.name",
+                            destination = "continent")
 
 
