@@ -1,4 +1,6 @@
 #install.packages("countrycode")
+#install.packages("rworldmap")
+
 # Move these to different file and include here
 library(ggplot2)
 library(ggalt) # For outline 
@@ -58,4 +60,25 @@ sportsDF$continent <- countrycode(sourcevar = sportsDF[, "Team"],
                             origin = "country.name",
                             destination = "continent")
 
+continentHist <- ggplot(sports21stMedalDF, aes(continent))
+continentHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title = "Medal Per Continents", 
+       y = "Count",
+       fill = "# Medals",
+       caption = "Olympics Data Visualization")
 
+# World map 
+library(rworldmap)
+
+#create a map-shaped window
+mapDevice('x11')
+
+# Create a medal count with groupby Team which is Country 
+medalPerCountry <- table(sports21stMedalDF$Team)
+
+medalCountryDF <- data.frame(medalPerCountry)
+#join to a coarse resolution map
+spdf <- joinCountryData2Map(ddf, joinCode="NAME", nameJoinColumn="country")
+
+mapCountryData(spdf, nameColumnToPlot="value", catMethod="fixedWidth")
