@@ -1,13 +1,15 @@
+install.packages("sqldf")
 library(sqldf)
 require(ggplot2) 
 library(plyr)
 
 
-setwd ("C:/DS/09 Visualization/week8/data")
+#setwd ("C:/DS/09 Visualization/week8/data")
+setwd("/Users/gogol/Documents/Utica/DSC-611-Z1/Module8/DS-611-Project")
 
 a <- read.csv("athlete_events.csv", header = TRUE)
 
-1. all player younger than 19 years old
+# 1. all player younger than 19 years old
 
 p1 <- sqldf("SELECT year,COUNT(*) player FROM a WHERE noc ='USA' and Age < 19 and year >1999 group by year order by year")
 p2 <- sqldf("SELECT COUNT(*) male FROM a WHERE noc ='USA' and Age < 19 and year >1999 and Sex = 'M' group by year order by year")
