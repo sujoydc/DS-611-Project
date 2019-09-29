@@ -68,6 +68,18 @@ continentHist +  geom_bar(aes(fill = sports21stMedalDF$Medal), width = 0.5) +
        fill = "# Medals",
        caption = "Olympics Data Visualization")
 
+# USA player under 19 in Olympic event# Subset of only medal winners
+usaUnder19DF <- subset(sports21stDF, Team == 'United States' & Age < 19)
+
+usaUnder19Hist <- ggplot(usaUnder19DF, aes(Year))
+usaUnder19Hist +  geom_bar(aes(fill = usaUnder19DF$Sex), width = 0.5) + 
+  theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
+  labs(title = "USA (Under 19) ", 
+       y = "Count",
+       fill = "Sex"
+       caption = "Olympics Data Visualization (2000 - 2016)")
+ 
+
 # World map 
 library(rworldmap)
 
