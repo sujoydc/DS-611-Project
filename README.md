@@ -6,6 +6,9 @@ Final Project for Data Visualization
 * @Lawrence
 * @Sujoy
 
+# Hangout Link:
+meet.google.com/ycn-beaj-sbz
+
 # Project Structure:
 
 
