@@ -9,6 +9,9 @@ Final Project for Data Visualization
 # Hangout Link:
 meet.google.com/ycn-beaj-sbz
 
+Join by phone
+‪+1 424-337-0432‬ PIN: ‪699 117 249‬#
+
 # Project Structure:
 
 
