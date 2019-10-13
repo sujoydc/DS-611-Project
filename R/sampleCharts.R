@@ -76,7 +76,7 @@ usaUnder19Hist +  geom_bar(aes(fill = usaUnder19DF$Sex), width = 0.5) +
   theme(axis.text.x = element_text(angle=65, vjust=0.6)) + 
   labs(title = "USA (Under 19) ", 
        y = "Count",
-       fill = "Sex"
+       fill = "Sex",
        caption = "Olympics Data Visualization (2000 - 2016)")
  
 

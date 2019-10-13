@@ -3,9 +3,10 @@ library(ggplot2)
 library(plyr)
 
 
-setwd ("C:/DS/09 Visualization/week8/data")
+setwd("/Users/gogol/Documents/Utica/DSC-611-Z1/Module8/DS-611-Project")
 
-olympic <- read.csv("athlete_events.csv", header = TRUE)
+
+olympic <- read.csv("./data/athlete_events.csv", header = TRUE)
 
 #1. player younger than 19 years old
 
@@ -19,9 +20,7 @@ year <- sqldf("SELECT distinct year FROM olympic  WHERE year >1999 order by year
 
 --
 #2. Non top 10 Medal winning countries \n-- player under 19 (Summer Olympic)
-non_top <- sqldf("SELECT year,COUNT(*) player FROM olympic WHERE noc not in 
-('CAN','CHN','USA','RUS','EUN','RFA','FRG','GER','GRB','JPN','KOR','ITA','NED','NOR','POR','SWE','SWZ','URS','ESP')
-and Age < 19 and year in ('2000','2004','2008','2012','2016') group by year order by year")
+non_top <- sqldf("SELECT year, COUNT(*) player FROM olympic WHERE noc not in ('CAN','CHN','USA','RUS','EUN','RFA','FRG','GER','GRB','JPN','KOR','ITA','NED','NOR','POR','SWE','SWZ','URS','ESP') and Age < 19 and year in ('2000','2004','2008','2012','2016') group by year order by year")
 
 nontop_g <- ddply(non_top, c("Year", "player"))
 
