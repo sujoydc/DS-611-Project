@@ -1,0 +1,52 @@
+--- Group B Final project – data part
+
+Thank you everyone for joining us. Let’s review the data. 
+
+Slide 1: -- Data description
+
+This report uses Kaggle Dataset “120 Years of Olympic History: Athletes and Results”. 
+This dataset provides 136K observations on 15 variables. In preparatory data processing, 
+the following variables were selected for analysis: Sex, Age, Team, Year, Season, Medal 
+and Country, and Continent?
+
+After analyzed different aspects in the whole Olympic event data, only subset data from 2000 
+were chosen for better understanding the sport trends and player status in different countries.
+
+Data were extracted, processed, analyzed with R. The subset data includes 5 summer Olympic 
+events from 2000 to 2016, and 4 Winter Olympic events from 2002 to 2014. We analyzed players 
+under 19 year old, both male and female, from all countries, but we focus on medal winning 
+players NOT from top 10 countries.
+
+
+Slide 2: all player info
+-- Methods/ Approach: A description of the techniques or algorithms to solve the problem.
+
+Data preprocessing includes extracting interested data, such as aggregate, sort, join, and 
+append data frames.Line charts and bar chart were produced for better understanding and easy 
+comparison. there are 2 charts for comparison, one is player in summer Olympics, another one is 
+player in winter Olympics.
+
+
+The charts in this slide indicate the number of players under 19 years old from around the world is decreasing in summer Olympic.
+the number in winter Olympics is up and down though.
+
+
+Slide 3: top 10 vs non-top 10
+The charts in this slide show the total number of players under 19 years old from medal winning countries in second
+tier. non top 10 medal winning countries.
+
+
+Slide 4: male vs female
+And the bar charts in this slide show the number of male and female players under 19 years old from medal winning countries
+ in non top 10 medal winning countries. 
+
+
+It also indica
+tes that there are a greater number of females under 19 participating 
+than males in the same demographic. Athletes of this age group could be under resourced 
+and good candidates for sponsorships. 
+
+Slide 5: USA player male vs female
+
+This slide shows the number of U.S. players under 19 are similar, female athletes far more than male athletes.  
+
