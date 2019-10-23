@@ -3,9 +3,30 @@ library(ggplot2)
 library(plyr)
 
 
-setwd ("C:/DS/09 Visualization/week8/data")
+setwd("/Users/gogol/Documents/Utica/DSC-611-Z1/Module8/DS-611-Project")
 
-olympic <- read.csv("athlete_events.csv", header = TRUE)
+olympic <- read.csv("./data/athlete_events.csv", header = TRUE)
+
+
+all_under_19 <- sqldf("SELECT year,COUNT(*) player 
+                       FROM olympic WHERE 
+                       Age < 19 AND year in 
+                      ('2000','2002','2004','2006','2008','2010','2012','2014','2016') 
+                      group by year order by year")
+
+all_under_19_g <- ddply(all_under_19, c("Year", "player"))
+
+ggplot(all_under_19_g, aes(x=Year, y=player, colour=player)) + geom_line()  + geom_point() 
++ xlab('Year') 
++ ylab('Player') 
++ labs(title = "Medal winning countries (Under 19)",
+                       x = "From 2000 to 2016",
+                       y = "Player number",
+                       fill = "blue") 
++ scale_x_continuous("Year", breaks=seq(2000, 2016, 4))
+
+##=================
+
 
 #1. Non top 10 Medal winning countries \n-- player under 19 (Summer Olympic)
 non_top <- sqldf("SELECT year,COUNT(*) player FROM olympic WHERE noc not in 
@@ -68,7 +89,8 @@ spg2 + geom_bar(stat = "identity", aes(fill = Sex),width=1) +theme_minimal() +
 #Second tier medal countries - Winter olympic
 
 Winter_2tier <- sqldf("SELECT year,sex, COUNT(*) player FROM olympic WHERE noc in 
-('JPN','ITA','OAR','CZE','BLR','CHN','SVK','FIN','GBR','POL','HUN','UKR','AUS','SLO','BEL','NZL','ESP','KAZ','LAT', 'LIE')
+('JPN','ITA','OAR','CZE','BLR','CHN','SVK','FIN','GBR','POL','HUN','UKR','AUS','SLO','BEL','NZL','ESP','KAZ','LAT', 'LIE')
+
 and Age < 19 and year in ('2002','2006','2010','2014','2018') group by year,sex order by year");
 
 wdf <- as.data.frame(Winter_2tier)
@@ -85,7 +107,8 @@ wpg +geom_bar(stat = "identity", aes(fill = Sex),width=1) +
 #5. Country barchart - Medal winning second tier countries - Winter olympic
 
 Winter_top10_20 <- sqldf("SELECT year, noc, COUNT(*) player FROM olympic WHERE noc in 
-('JPN','ITA','RUS','CZE','BLR','CHN','SVK','FIN','GBR','POL')
+('JPN','ITA','RUS','CZE','BLR','CHN','SVK','FIN','GBR','POL')
+
 and Age < 19 and year in ('2002','2006','2010','2014','2018') group by year,noc order by year");
 
 wdf <- as.data.frame(Winter_top10_20)
