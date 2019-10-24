@@ -18,7 +18,6 @@ Join by phone
 
 # Project Structure:
 
-
 > root
 > DS-611-Project.Rproj => RStudio Project file (Please ignore if you are not using RStudio)  
 > .gitignore => To ignore local git files  
