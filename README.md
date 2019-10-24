@@ -6,6 +6,10 @@ Final Project for Data Visualization
 * @Lawrence
 * @Sujoy
 
+# Tableau Story Link:
+https://public.tableau.com/profile/sujoy7503#!/vizhome/OculyticaInc_-SalesPitch/OlympicTrack?publish=yes
+
+
 # Hangout Link:
 meet.google.com/ycn-beaj-sbz
 
